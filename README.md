@@ -14,7 +14,7 @@ The vue-cli project will launch locally and you'll be able to play with each of 
 ```javascript
 // Bring in the Javascript Distribution
 import Vue from 'vue'
-import VueFormElements from '@processmaker/vue-form-elements'
+import VueFormElements from '@hmdshariati/vue-form-elements'
 
 Vue.use(VueFormElements)
 ```
@@ -23,7 +23,7 @@ Using the above, the components are globally registered with VueJS.
 # Example Usage For Single Form Element (Using Single File Components)
 
 ```javascript
-import {FormInput, FormSelect} from '@processmaker/vue-form-elements'
+import {FormInput, FormSelect} from '@hmdshariati/vue-form-elements'
 
 new Vue({
     el: '#example',

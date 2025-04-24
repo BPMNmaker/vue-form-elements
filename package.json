@@ -1,5 +1,5 @@
 {
-  "name": "@processmaker/vue-form-elements",
+  "name": "@hmdshariati/vue-form-elements",
   "version": "0.65.0",
   "description": "Reusable VueJS Based Form Elements styled with Bootstrap 4",
   "scripts": {
@@ -43,6 +43,7 @@
     "tinymce": "5.10.0",
     "vue": "^2.6.12",
     "vue-date-pick": "^1.5.1",
+    "vue-persian-datetime-picker": "^2.10.4",
     "vue-uniq-ids": "^1.0.0",
     "weekstart": "^1.0.0"
   },
@@ -109,13 +110,13 @@
     "> 0.2% and not dead"
   ],
   "bugs": {
-    "url": "https://github.com/processmaker/vue-form-elements/issues"
+    "url": "https://github.com/rivassh/vue-form-elements/issues"
   },
   "engines": {
     "npm": ">=8",
     "node": ">=16"
   },
-  "homepage": "https://www.github.com/processmaker/vue-form-elements",
+  "homepage": "https://www.github.com/rivassh/vue-form-elements",
   "keywords": [
     "html",
     "vuejs",

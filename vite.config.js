@@ -41,7 +41,7 @@ export default defineConfig({
           vue: "Vue",
           moment: "moment",
           "moment-timezone": "moment-timezone",
-          "@processmaker/vue-multiselect": "VueMultiselect"
+          "@processmaker/vue-multiselect": "VueMultiselect",
         }
       }
     }

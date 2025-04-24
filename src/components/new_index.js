@@ -6,6 +6,7 @@ import FormSelect from "./FormSelect.vue";
 import FormSelectList from "./FormSelectList.vue";
 import FormTextArea from "./FormTextArea.vue";
 import FormDatePicker from "./FormDatePicker.vue";
+import PersianFormDatePicker from "./PersianFormDatePicker.vue";
 import FormAccordion from "./FormAccordion.vue";
 import FormHtmlEditor from "./FormHtmlEditor.vue";
 import FormHtmlViewer from "./FormHtmlViewer.vue";
@@ -32,6 +33,7 @@ const components = {
   FormSelectList,
   FormTextArea,
   FormDatePicker,
+  PersianFormDatePicker,
   FormAccordion,
   FormHtmlEditor,
   FormHtmlViewer,
@@ -77,6 +79,7 @@ export {
   FormSelectList,
   FormTextArea,
   FormDatePicker,
+  PersianFormDatePicker,
   FormAccordion,
   FormHtmlEditor,
   FormHtmlViewer,

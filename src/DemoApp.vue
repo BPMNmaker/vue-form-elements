@@ -120,6 +120,14 @@
       validation="required"
     >
     </form-radio-button-group>
+
+    <persian-form-date-picker
+      v-model="data.sampleDatePicker"
+      label="Sample calendar"
+      placeholder="Placeholder Sample Calendar"
+      helper="Helper Sample Persian Calendar, Theming is supported by overwriting CSS classes."
+      data-format="datetime"
+    />
     <form-date-picker
       v-model="data.sampleDatePicker"
       label="Sample calendar"
@@ -151,6 +159,7 @@
 import Vue from "vue";
 import VueFormElements from "./components/index";
 import FormDatePicker from "./components/FormDatePicker";
+import PersianFormDatePicker from "./components/PersianFormDatePicker";
 
 // Register our plugin
 Vue.use(VueFormElements);
@@ -176,6 +185,7 @@ export default {
         sampleSelect: "",
         sampleCustomValidationError: "",
         sampleDatePicker: new Date().toISOString(),
+        samplePersianDatePicker: new Date().toISOString(),
         sampleDelayTimeControl: ""
       },
       richtext: false,
