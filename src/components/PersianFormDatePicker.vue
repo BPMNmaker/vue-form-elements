@@ -10,7 +10,7 @@
       class="datePicker"
       @input="submitDate"
     >
-      <template v-slot:default="{ open, inputValue }">
+      <template #default="{ open, inputValue }">
         <input
           type="text"
           v-bind="inputAttributes"
@@ -20,20 +20,13 @@
           @click="onOpen(open)"
           @change="onChangeHandler($event.target.value)"
         />
-        <button
-          v-if="date && !isReadOnly"
-          type="button"
-          @click="clear"
-          class="vdpClearInput"
-        ></button>
+        <button v-if="date && !isReadOnly" type="button" class="vdpClearInput" @click="clear"></button>
       </template>
     </date-pick>
     <div v-if="errors.length > 0" class="invalid-feedback d-block">
       <div v-for="(err, index) in errors" :key="index">{{ err }}</div>
     </div>
-    <small v-if="helper" class="form-text text-muted">{{
-      helper
-    }}</small>
+    <small v-if="helper" class="form-text text-muted">{{ helper }}</small>
   </div>
 </template>
 
@@ -41,14 +34,15 @@
 import { createUniqIdsMixin } from "vue-uniq-ids";
 import moment from "moment-timezone";
 import Mustache from "mustache";
-import DatePicker from "./DatePicker.vue";
+import VuePersianDatetimePicker from "vue-persian-datetime-picker";
+import Validator from "@chantouchsek/validatorjs";
+
 import ValidationMixin from "./mixins/validation";
 import DataFormatMixin from "./mixins/DataFormat";
 import { getUserDateFormat, getUserDateTimeFormat, getTimezone } from "../dateUtils";
 import "vue-date-pick/dist/vueDatePick.css";
 import RequiredAsterisk from './common/RequiredAsterisk';
-import VuePersianDatetimePicker from 'vue-persian-datetime-picker';
-import Validator from "@chantouchsek/validatorjs";
+
 
 const uniqIdsMixin = createUniqIdsMixin();
 const checkFormats = ["YYYY-MM-DD", "MM/DD/YYYY", moment.ISO_8601];
@@ -122,7 +116,8 @@ export default {
     datePickerConfig() {
       return {
         format: this.format,
-        displayFormat: this.format,
+        displayFormat: "jYYYY-jMM-jDD HH:MM:ss",
+        type: "datetime",
         pickTime: this.datepicker,
         parseDate: this.parsingInputDate,
         editable: !this.disabled,
@@ -149,8 +144,7 @@ export default {
     },
     classList() {
       return {
-        "is-invalid":
-          (this.validator && this.validator.errorCount) || this.error
+        "is-invalid": (this.validator && this.validator.errorCount) || this.error
       };
     },
     errors() {
@@ -164,10 +158,7 @@ export default {
     validator: {
       deep: true,
       handler() {
-        this.validatorErrors =
-          this.validator && this.validator.errors.get(this.name)
-            ? this.validator.errors.get(this.name)
-            : [];
+        this.validatorErrors = this.validator && this.validator.errors.get(this.name) ? this.validator.errors.get(this.name) : [];
       }
     },
     value(newValue) {
